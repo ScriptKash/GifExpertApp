@@ -1,0 +1,22 @@
+import React, { useState } from "react";
+import { AddCategory } from "./components/AddCategory";
+import GifGrid from "./components/GifGrid";
+
+export const GifExpertApp = () => {
+  const [categories, setCategories] = useState([
+    "Cats",
+  ]);
+
+  return (
+    <>
+      <h2>GifExpertApp</h2>
+      <AddCategory setCategories={setCategories} />
+
+        {categories.map((category) => (
+          <GifGrid key={category} category={category} />
+        ))}
+
+        Powered by <img src="https://i.imgur.com/9CzicZH.png" alt="Giphy Logo" style={{width:60}} />
+    </>
+  );
+};
